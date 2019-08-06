@@ -16,7 +16,7 @@ function App() {
     <div className="column">
       <RealtimeMap
         accessToken={process.env.REACT_APP_MAPBOX_TOKEN || ""}
-        styleUrl="mapbox://styles/mbxsolutions/ck5gzg4uw0qwo1iplcgdn081s"
+        styleUrl="mapbox://styles/mbxsolutions/ck4ye87f3nlti1co2al1wpsnz"
         electionData={electionData}
       />
       <div className="column margin-1 width-50">

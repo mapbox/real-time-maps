@@ -11,7 +11,7 @@
   "author": "David Wicks <solutions_architecture@mapbox.com> (https://sansumbrella.com/)",
   "license": "(BSD-3-Clause OR CC0-1.0)",
   "dependencies": {
-    "@sansumbrella/mapbox-tilesets": "^0.1.4",
+    "@sansumbrella/mapbox-tilesets": "^0.1.7",
     "dotenv": "^8.1.0"
   }
 }

@@ -1,6 +1,6 @@
 # Real-time Data Visualization
 
-This is a reference architecture for visualizing real-time data with Mapbox.
+This is a reference architecture for visualizing real-time data with Mapbox. It implements and explains the solution described on the [Real-time Mapping](https://www.mapbox.com/solutions/real-time-maps) page.
 
 It includes an election-based example where counties are updated live with voter participation data sent from a server. The data for this example is based on historic election participation and is animated using simulated poll-closing times.
 
@@ -52,7 +52,7 @@ Your browser will open a page displaying a map of US counties. Over time, the co
 
 ### Configuration
 
-You need a recent version of [Node.js](https://nodejs.org/en/). This architecture was tested with Node 12.8, 10.16, and 8.16.
+You need a recent version of [Node.js](https://nodejs.org/en/). This architecture was developed with Node 12.8.
 
 You need an active [Mapbox account](https://account.mapbox.com/auth/signup/) and [access token](https://account.mapbox.com/access-tokens/).
 
@@ -201,9 +201,3 @@ solutions_architecture@mapbox.com
 The code for this project is licensed under the BSD 3-Clause License - see the [LICENSE](./LICENSE.md) file for details.
 
 For data licensing, see the [README in the data/ folder](./data/README.md).
-
-## Acknowledgments
-
-Ivan Ramiscal and Chris Toomey for help clarifying and diagramming structure of solution.
-
-Link back to mapbox.com/solutions landing page.

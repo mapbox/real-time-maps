@@ -30,8 +30,8 @@ export function RealtimeMap({ accessToken, styleUrl, electionData }: Props) {
     zoom: 3.8
   });
 
-  const displayLayerID = "us-counties"; // the display layer we dynamically style
-  const sourceLayerID = "boundaries_election"; // the source used by the display layer
+  const displayLayerID = "county-shape"; // the display layer we dynamically style
+  const sourceLayerID = "county"; // the source used by the display layer
   useElectionDataToStyleLayer(map, electionData, displayLayerID, sourceLayerID);
   useClickEffect(map, displayLayerID);
 

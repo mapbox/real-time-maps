@@ -29,24 +29,23 @@ async function main() {
         } else {
             console.log("uploading source file");
             const sourceData = fs.createReadStream(path.resolve(dataFile));
-            const { success, error } = await tilesets.uploadSource(sourceData, sourceName);
-            if (!success) {
-                console.log("Error uploading source:", error);
+            const sourceUploadJob = await tilesets.uploadSource(sourceData, sourceName);
+            console.log(sourceUploadJob);
+            if (!sourceUploadJob.success) {
                 return 1;
             }
         }
 
         console.log(`uploading or updating recipe for ${tilesetName}`);
-        const recipeData = JSON.parse(fs.readFileSync(recipeFile).toString().replace("USER_NAME", user));
-        const { success, error } = await tilesets.validateRecipe(JSON.stringify(recipeData));
-        if (!success) {
-            console.log(error);
-            return 1;
-        }
-        await tilesets.uploadRecipe(recipeData, tilesetName);
+        const recipeData = JSON.parse(fs.readFileSync(recipeFile).toString().replace(/USER_NAME/g, user));
+        const validationJob = await tilesets.validateRecipe(JSON.stringify(recipeData));
+        console.log(validationJob);
+        const recipeUploadJob = await tilesets.uploadRecipe(recipeData, tilesetName);
+        console.log(recipeUploadJob);
 
         console.log(`publishing tileset ${user}.${tilesetName}`);
-        await tilesets.publishTileset(tilesetName);
+        const publishJob = await tilesets.publishTileset(tilesetName);
+        console.log(publishJob);
     } catch (err) {
         console.error(err);
         process.exit(1);

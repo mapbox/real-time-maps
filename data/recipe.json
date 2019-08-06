@@ -113,7 +113,10 @@
           false
         ],
         "attributes": {
-          "allowed_output": ["NAME"]
+          "set": {
+            "name": ["get", "NAME"]
+          },
+          "allowed_output": ["name"]
         }
       }
     }

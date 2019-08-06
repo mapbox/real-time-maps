@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import {ReplaySubject} from 'rxjs';
+import { useEffect, useState } from "react";
+import { ReplaySubject } from "rxjs";
 
 export interface ElectionUpdate {
   geoid: string;
@@ -7,9 +7,9 @@ export interface ElectionUpdate {
   votes_total: number;
 }
 
-export type ResetCommand = 'RESET';
-export const RESET: ResetCommand = 'RESET';
-export type ElectionMessage = ElectionUpdate[]|ResetCommand;
+export type ResetCommand = "RESET";
+export const RESET: ResetCommand = "RESET";
+export type ElectionMessage = ElectionUpdate[] | ResetCommand;
 export type ElectionSubject = ReplaySubject<ElectionMessage>;
 
 /**
@@ -21,23 +21,26 @@ export function useStreamingElectionData(url: string): ElectionSubject {
   // remember earlier updates to avoid race condition with map initialization
   const [subject] = useState(new ReplaySubject<ElectionMessage>(5));
 
-  useEffect(function subscribeToElectionData() {
-    const source = new EventSource(url);
-    source.addEventListener('message', function(message) {
-      const data = decodeURI(message.data);
-      if (data === RESET) {
-        subject.next(RESET);
-      } else {
-        const update = JSON.parse(decodeURI(message.data)) as ElectionUpdate[];
-        subject.next(update);
-      }
-    });
+  useEffect(
+    function subscribeToElectionData() {
+      const source = new EventSource(url);
+      source.addEventListener("message", function(message) {
+        const data = decodeURI(message.data);
+        if (data === RESET) {
+          subject.next(RESET);
+        } else {
+          const update = JSON.parse(data) as ElectionUpdate[];
+          subject.next(update);
+        }
+      });
 
-    return () => {
-      console.log('closing event source');
-      source.close();
-    };
-  }, [subject, url]);
+      return () => {
+        console.log("closing event source");
+        source.close();
+      };
+    },
+    [subject, url]
+  );
 
   return subject;
 }
