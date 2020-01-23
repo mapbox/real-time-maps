@@ -1,0 +1,17 @@
+{
+  "name": "real-time-mapping-solution",
+  "version": "1.0.0",
+  "author": "David Wicks <solutions_architecture@mapbox.com> (https://sansumbrella.com/)",
+  "license": "BSD-3-Clause",
+  "start_url": ".",
+  "scripts": {
+    "copy-env": "if test -f '.env'; then (cp .env client/) && (cp .env data/); else echo 'no .env file found; assuming you have set REACT_APP_MAPBOX_TOKEN'; fi",
+    "start-samples": "concurrently \"(cd server && npm start)\" \"(cd client && npm start)\"",
+    "start": "npm run copy-env && npm run start-samples",
+    "postinstall": "concurrently \"(cd server && npm install)\" \"(cd ./client && npm install)\" \"(cd ./data && npm install)\"",
+    "upload-data": "npm run copy-env && (cd data && npm run upload-data)"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2"
+  }
+}

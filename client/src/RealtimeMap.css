@@ -1,0 +1,5 @@
+.mapbox-map {
+  min-height: 70vh;
+  width: 100%;
+  flex-grow: 2;
+}

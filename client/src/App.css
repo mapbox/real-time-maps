@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.margin-1 {
+  margin: 1rem;
+}
+
+.width-50 {
+  max-width: 50vw;
+}
