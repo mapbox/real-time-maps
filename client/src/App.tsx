@@ -16,23 +16,26 @@ function App() {
     <div className="column">
       <RealtimeMap
         accessToken={process.env.REACT_APP_MAPBOX_TOKEN || ""}
-        styleUrl="mapbox://styles/mbxsolutions/ck5gzg4uw0qwo1iplcgdn081s"
+        styleUrl="mapbox://styles/mbxsolutions/ck4ye87f3nlti1co2al1wpsnz"
         electionData={electionData}
       />
-      <div className="column margin-1 width-50">
-        <h1>Real-time election map simulation</h1>
-        <h2>Counties reporting: {countiesReporting.toLocaleString()}</h2>
-        <h2>Votes counted: {votesCast.toLocaleString()}</h2>
-        <h2>Mapbox solution for real-time data visualization</h2>
-        <p>
-          This sample shows voter turnout rates across the contiguous United States during the 2016 general election.
-          The map is updated as voting data is sent from the server. For this demo, the server simulates polls closing
-          at different times across the country.
-        </p>
-        <p>
-          Read more about real-time mapping and the architecture of this solution on our{" "}
-          <a href="https://www.mapbox.com/solutions/real-time-maps">solutions page</a>.
-        </p>
+      <div className="row">
+        <div className="column margin-1 width-50">
+          <h1>Real-time election map simulation</h1>
+          <h2>Counties reporting: {countiesReporting.toLocaleString()}</h2>
+          <h2>Votes counted: {votesCast.toLocaleString()}</h2>
+          <p>
+            This application shows voter turnout rates across the contiguous United States during the 2016 general
+            election. The map is updated as voting data is sent from the server. For this demo, the server simulates
+            polls closing at different times across the country.
+          </p>
+        </div>
+        <div className="column margin-1 width-50">
+          <p>
+            Read more about real-time mapping and the architecture of this application on the{" "}
+            <a href="https://www.mapbox.com/solutions/real-time-maps">real-time mapping solutions page</a>.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 {
   "name": "real-time-mapping-solution",
   "version": "1.0.0",
-  "author": "David Wicks <solutions_architecture@mapbox.com> (https://sansumbrella.com/)",
+  "author": "David Wicks <solutions_architecture@mapbox.com> (https://mapbox.com/)",
   "license": "BSD-3-Clause",
   "start_url": ".",
   "scripts": {

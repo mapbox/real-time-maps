@@ -1,11 +1,11 @@
-# Voting Precincts
+# Voter Participation
 
-This package contains an example frontend for displaying real-time voting precinct data using React and Mapbox GL JS.
+This package contains an example frontend for displaying real-time voting data using React and Mapbox GL JS.
 
-It uses a base style containing geometry and metadata about each precinct. At runtime, it adds a paint property to
-the style that is controlled by feature-state and changes the appearance of the precincts. On an interval, it requests
-real-time data about each visible feature from the mock API and changes the feature-state based on the response.
-
-![diagram]()
+At runtime, this client joins tiled county geometry to live voter participation data streamed from a server. The counties are styled based on their real-time voter participation value.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Quick Start
+
+The client is run by the root package's `npm run start` script, which also starts the API server. If you run it without the API server, you will see an unchanging gray map.

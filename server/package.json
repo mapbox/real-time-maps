@@ -12,7 +12,7 @@
   "keywords": [],
   "dependencies": {
     "express": "^4.17.1",
-    "rxjs": "^6.5.3"
+    "rxjs": "^6.5.4"
   },
   "devDependencies": {
     "jest": "^24.9.0"

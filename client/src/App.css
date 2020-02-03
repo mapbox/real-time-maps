@@ -15,3 +15,13 @@
 .width-50 {
   max-width: 50vw;
 }
+
+p {
+  font-size: 1.5em;
+}
+
+p,
+h1,
+h2 {
+  margin: 0.5rem 0;
+}
