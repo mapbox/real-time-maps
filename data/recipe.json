@@ -6,9 +6,7 @@
       "minzoom": 1,
       "maxzoom": 16,
       "features": {
-        "id": {
-          "attribute_id": "GEOID"
-        },
+        "id": [ "get", "GEOID" ],
         "filter": [
           "match",
           ["to-string", ["get", "STATE_NAME"]],
