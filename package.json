@@ -12,6 +12,6 @@
     "upload-data": "npm run copy-env && (cd data && npm run upload-data)"
   },
   "devDependencies": {
-    "concurrently": "^4.1.2"
+    "concurrently": "^5.2.0"
   }
 }
